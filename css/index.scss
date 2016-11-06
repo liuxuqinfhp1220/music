@@ -1,0 +1,576 @@
+*{
+  margin:0;
+  padding:0;
+}
+body{
+  background:url(../img/bg4.jpg) left center no-repeat;
+}
+.music-list{
+  opacity: 0;
+  padding:0 60px;
+  width:100%;
+  height:550px;
+  margin:0 auto;
+  background:#DFB3A8 url(../img/bg1.jpg) center center no-repeat;
+  backgroun-size:contain;
+  box-sizing: border-box;
+  transition: opacity .8s linear .2s;
+  position:relative;
+  z-index:2;
+  overflow: auto;
+  position:fixed;
+  bottom:120px;
+  ol{
+    color:#fff;
+    height:30px;
+    width:100%;
+    cursor:pointer;
+    border-bottom:1px solid hsla(12,0%,100%,.4);
+    .name{
+      display:block;
+      height:30px;
+      line-height:30px;
+      font-size:18px;
+      font-family: "楷体";
+      float:left;
+      width:95%;
+    }
+    .del{
+      margin:5px 0;
+      float: left;
+      width:20px;
+      height:20px;
+      background:url(../img/del.png) center center no-repeat;
+      background-size:contain;
+    }
+    &.active{
+      color:#671D12;
+      text-shadow: 0 0 .1em, 0 0 .1em;
+    }
+    &:hover{
+     color:#671D12;
+  }
+  }
+}
+.yinyue {
+  width: 100%;
+  height:120px;
+  margin: 0 auto;
+  position: relative;
+  background: rgba(255,255,255,1);
+  position:fixed;
+  bottom:0;
+  z-index:4;
+  &.active{
+    background: rgba(255,255,255,.7);
+  }
+  .hide{
+    position:absolute;
+    width:40px;
+    height:20px;
+    font-size:14px;
+    border:1px solid #000;
+    top:50px;
+    display:none;
+    text-align: center;
+    line-height:20px;
+  }
+  .song-font{
+    position:absolute;
+    left:160px;
+    top:15px;
+    font-size:14px;
+    color:#FF244D;
+    font-weight:normal;
+  }
+  .bofanganting {
+    position: absolute;
+    top:65px;
+    left:0;right:0;
+    margin:0 auto;
+    width: 40px;
+    height: 40px;
+    border: 1px solid hsla(12,0%,100%,.4);
+    border-radius:50%;
+    background:url(../img/close.png) center center no-repeat;
+    background-size:contain;
+    cursor:pointer;
+    &.bofang {
+      background:url(../img/open.png) center center no-repeat;
+      background-size:contain;
+    }
+  }
+  .time-info {
+    position: absolute;
+    top:25px;
+    left:8%;
+    width:60px;
+    height: 30px;
+    font-size:16px;
+    text-align:center;
+    line-height:30px;
+    font-family:"楷体";
+  }
+    .shang{
+      position:absolute;
+      top:75px;
+      left:40%;
+      width:28px;
+      height:28px;
+      border-radius:50%;
+      background:url(../img/prev.png) center center no-repeat;
+      background-size:contain;
+      cursor:pointer;
+    }
+    .xia{
+      width:28px;
+      height:28px;
+      border-radius:50%;
+      position:absolute;
+      top:75px;
+      left:58%;
+      background:url(../img/next.png) center center no-repeat;
+      background-size:contain;
+      cursor:pointer;
+    }
+  .jindutiao {
+    width: 80%;
+    height:3px;
+    background:#BDBDBD;
+    position: absolute;
+    border-radius:5px;
+    top:40px;
+    left:12%;
+    margin: 0 auto;
+    cursor:pointer;
+    .circle {
+      width:9px;
+      height:9px;
+      border-radius: 50%;
+      background:#FF244D;
+      top: -3px;
+      position: absolute;
+      left: 0;
+      trisition:left 2s linear;
+      cursor:pointer;
+    }
+    .process{
+      width:0;
+      height:3px;
+      background:#FF244D;
+    }
+  }
+  .shenyin {
+    width:30px;
+    height: 30px;
+    border-radius:50%;
+    position: absolute;
+    top: 75px;
+    left:78%;
+    background:url(../img/voice.png) center center no-repeat;
+    background-size:contain;
+    cursor:pointer;
+    &.jingyin{
+      background:url(../img/mute.png) center center no-repeat;
+      background-size:contain;
+    }
+  }
+  .yinliang {
+    width: 100px;
+    height:3px;
+    background:#BDBDBD;
+    position: absolute;
+    top:90px;
+    left:81%;
+    border-radius:5px;
+    cursor:pointer;
+    .circle {
+      width:9px;
+      height:9px;
+      border-radius: 50%;
+      background:#FF244D;
+      top:-3px;
+      position: absolute;
+      left:96px;
+      trisition:left 2s linear;
+      cursor:pointer;
+    }
+    }
+  }
+  .auto{
+    width:25px;
+    height:25px;
+    background:url(../img/sort.png) center center no-repeat;
+    background-size:contain;
+    position:absolute;
+    top:75px;
+    left:30%;
+    cursor:pointer;
+    &.loop{
+      background:url(../img/loop.png) center center no-repeat;
+      background-size:contain;
+    }
+    &.random{
+      background:url(../img/random.png) center center no-repeat;
+      background-size:contain;
+    }
+  }
+  .menu{
+    width:30px;
+    height:30px;
+    position:absolute;
+    top:75px;
+    left:68%;
+    background:url(../img/menu.png) center center no-repeat;
+    background-size:contain;
+    cursor:pointer;
+  }
+  .picture{
+    width:50px;
+    height:50px;
+    position:absolute;
+    top:15px;
+    left:4%;
+    background:url(../img/people.jpg) center 0 no-repeat;
+    background-size:cover;
+    border-radius:50%;
+    cursor: pointer;
+  }
+  .now{
+    position: absolute;
+    top:25px;
+    right:4%;
+    width:60px;
+    height: 30px;
+    font-size:16px;
+    text-align:center;
+    line-height:30px;
+    font-family:"楷体";
+  }
+.music-list.show{
+  opacity: 1;
+  z-index:6;
+}
+.all{
+  display:none;
+  opacity: 0;
+  width:100%;
+  height:547px;
+  background:#fff;
+  margin:0 auto;
+  text-align: center;
+  cursor:pointer;
+  z-index:4;
+  position:relative;
+  ransition: opacity 1s ease,display .1s ease;
+  transition: transform .5s ease;
+  &.active{
+    //transform: translate3d(0,0,0);
+    display:block;
+    opacity:0.7;
+  }
+  .header{
+    width:100%;
+    height:80px;
+    background:#FF244D;
+    box-sizing: border-box;
+    padding:20px 60px;
+    position:relative;
+    .previous{
+      width:39px;
+      height:39px;
+      border:1px solid #fff;
+      border-radius:50%;
+      box-sizing:border-box;
+      padding:4px 0;
+      float:left;
+      .big{
+        width:29px;
+        height:29px;
+        margin:0 auto;
+        background:#ffffff;
+        border-radius:50%;
+        line-height:29px;
+        font-size:20px;
+        text-align:center;
+        color:#FF244D;
+        font-weight:800;
+      }
+    }
+    h4{
+      position:absolute;
+      left:0;right:0;
+      margin:0 auto;
+      float: left;
+      width:600px;
+      height:40px;
+      font-size:24px;
+      color:#fff;
+      font-weight:normal;
+      line-height:40px;
+    }
+  }
+  .people{
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    margin:0 auto;
+    margin-top:70px;
+    box-shadow:0 0 20px #333;
+    background:url(../img/people.jpg) center 0 no-repeat;
+    background-size:cover;
+    &.active{
+      animation:xuanzhuan 5s infinite linear 1s;
+    }
+  }
+  .font{
+    width:100%;
+    height:35px;
+    margin:0 auto;
+    font-size:20px;
+    color:#FF244D;
+    margin-top:80px;
+  }
+  .all-list{
+    width:100%;
+    height:30px;
+    padding:0 80px;
+    box-sizing:border-box;
+    list-style:none;
+    li{
+      width:30px;
+      height:30px;
+      margin-left:20px;
+      float:right;
+    }
+    li:nth-child(4){
+      background:url(../img/share.png) center top no-repeat;
+      background-size:30px 30px;
+    }
+    li:nth-child(3){
+      background:url(../img/load.png) center top no-repeat;
+      background-size:30px 30px;
+    }
+    li:nth-child(2){
+      background:url(../img/collect.png) center top no-repeat;
+      background-size:30px 30px;
+    }
+    li:nth-child(1){
+      background:url(../img/detail.png) center top no-repeat;
+      background-size:30px 30px;
+    }
+    //background:url(../img/share.png) center top no-repeat;
+  }
+}
+@keyframes xuanzhuan {
+  to{
+    transform:rotate(1turn);
+  }
+}
+.music{
+  opacity: 1;
+  width:100%;
+  min-height:547px;
+  background:#F3F3F3;
+  overflow: auto;
+  transition: opacity 1s ease,display .1s ease;
+  &.active{
+    display: none;
+    opacity: 0;
+  }
+  .hi{
+    padding:12px 60px;
+    box-sizing: border-box;
+    width:100%;
+    height:100px;
+    background:#FF244D;
+    list-style: none;
+    li{
+      float:left;
+      width:20%;
+      height:75px;
+      text-align:center;
+      font-size:24px;
+      color:#fff;
+      a{
+        display:inline-block;
+        width:65px;
+        height:65px;
+        border:2px solid #fff;
+        padding:8px;
+        box-sizing: border-box;
+        border-radius:50%;
+        span{
+          display: inline-block;
+          width:45px;
+          height:45px;
+          background:url(../img/top.png) center center no-repeat;
+          background-color:#fff;
+          background-size:40px 40px;
+          border-radius:50%;
+        }
+      }
+      span{
+        display: inline-block;
+        line-height:75px;
+      }
+    }
+    li:nth-child(2){
+      background:url(../img/hat.png) center center no-repeat;
+      background-size:40px 40px;
+    }
+    li:nth-child(3){
+      background:url(../img/erji.png) center center no-repeat;
+      background-size:40px 40px;
+    }
+    li:nth-child(4){
+      background:url(../img/glasses.png) center center no-repeat;
+      background-size:40px 40px;
+    }
+    li:nth-child(5){
+      background:url(../img/search.png) center center no-repeat;
+      background-size:40px 40px;
+    }
+  }
+  .editor{
+    padding:0 60px;
+    width:100%;
+    height:80px;
+    background:#fff;
+    box-sizing:border-box;
+    list-style: none;
+    li{
+      width:25%;
+      height:100%;
+      float:left;
+      a{
+        color:#000;
+        text-decoration: none;
+        display: inline-block;
+        line-height:80px;
+        width:90%;
+        font-size: 24px;
+        font-weight:600;
+        text-align: center;
+      }
+      span{
+        color:#FF244D;
+        display: inline-block;
+        width:10%;
+        font-size:20px;
+        font-weight:600;
+        line-height:80px;
+      }
+    }
+  }
+  .advise{
+    width:100%;
+    height:150px;
+    padding:30px 60px;
+    box-sizing:border-box;
+    .icon{
+      width:85px;
+      height:85px;
+      border:2px solid #FF244D;
+      padding:7.5px;
+      box-sizing:border-box;
+      border-radius:50%;
+      background:#FFF url(../img/good.png) center center no-repeat;
+      background-size:45px 45px;
+      background-origin: content-box;
+      float:left;
+      margin-left:30px;
+      margin-right:20px;
+      &.hot{
+        background:#FFF url(../img/hot.png) center center no-repeat;
+        background-size:50px 50px;
+        background-origin: content-box;
+      }
+    }
+  }
+  .recommand{
+    float:left;
+    width:600px;
+    height:85px;
+    a{
+      display: block;
+      font-size:28px;
+      font-weight:600;
+      line-height:30px;
+      width:100%;
+      color:#000;
+      text-decoration: none;
+    }
+    .line{
+      width:212px;
+      height:15px;
+      background:url(../img/line.jpg) center center no-repeat;
+    }
+    .font-square{
+      width:100%;
+      height:35px;
+      span{
+        display:inline-block;
+        color:#616161;
+        font-size:28px;
+        font-weight:600;
+        line-height:35px;
+      }
+      .square{
+        display: inline-block;
+        width:200px;
+        height:15px;
+        margin-top:10px;
+        background:url(../img/square.jpg) left center no-repeat;
+      }
+    }
+  }
+  .like-list{
+    width:100%;
+    height:475px;
+    padding: 0 60px;
+    box-sizing: border-box;
+    list-style: none;
+    li{
+      float:left;
+      width: 325px;
+      height:475px;
+      margin-right:50px;
+      margin-left:35px;
+    }
+    li:nth-child(1){
+      background:url(../img/recommand1.jpg) center center no-repeat;
+    }
+    li:nth-child(2){
+      background:url(../img/recommand2.jpg) center center no-repeat;
+    }
+    li:nth-child(3){
+      margin-right:0;
+      background:url(../img/recommand3.jpg) center center no-repeat;
+    }
+  }
+  .hotsongs{
+    width:100%;
+    height:660px;
+    padding: 0 60px;
+    box-sizing: border-box;
+    list-style: none;
+    li{
+      width:100%;
+      height:120px;
+      margin-bottom:15px;
+    }
+    li:nth-child(1){
+      background: url(../img/song1.jpg) center center no-repeat;
+    }
+    li:nth-child(2){
+      background: url(../img/song2.jpg) center center no-repeat;
+    }
+    li:nth-child(3){
+      background: url(../img/song3.jpg) center center no-repeat;
+    }
+    li:nth-child(4){
+      background: url(../img/song4.jpg) center center no-repeat;
+    }
+  }
+}
